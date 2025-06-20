@@ -56,11 +56,10 @@ def run_guideline():
         if acr < 30:
             has_hypertension = yes_or_no("Does the patient have hypertension?")
             if has_hypertension:
-                print("Offer an ACE inhibitor or ARB (titrated to the highest licensed dose they can tolerate)")
                 print("Follow the NICE guideline on hypertension in adults.")
             else:
                 print("Monitor in line with eGFR category.")
-        elif 30 <= acr < 70:
+        elif acr < 70:
             has_hypertension = yes_or_no("Does the patient have hypertension?")
             if has_hypertension:
                 print("Offer an ACE inhibitor or ARB (titrated to the highest licensed dose they can tolerate)")
@@ -68,8 +67,6 @@ def run_guideline():
                 print("Monitor eGFR and consider discussing with a nephrologist if eGFR declines or ACR increases.")
         else:
             print("Offer an ACE inhibitor or ARB (titrated to the highest licensed dose they can tolerate) and refer for specialist assessment.")
-
-    print("Refer to NICE NG203 guideline for full context.")
 
 if __name__ == "__main__":
     run_guideline()
