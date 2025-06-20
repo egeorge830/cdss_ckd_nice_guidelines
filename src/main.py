@@ -57,7 +57,8 @@ def run_guideline():
     print("ACR classification:", classify_acr(acr))
 
     if diabetes:
-        print("Monitor ACR, creatinine and blood pressure annually.")
+        if acr < 3:
+            print("Monitor ACR, creatinine and blood pressure annually.")
         type2_dm = yes_or_no("Does the patient have type 2 diabetes?")
         meets_criteria = yes_or_no("Does the patient meet criteria for SGLT2 inhibitor?")
         sglt2_result = needs_sglt2(acr, type2_dm, meets_criteria)
@@ -68,6 +69,7 @@ def run_guideline():
         print(proteinuria_recommendation(acr, has_hypertension))
 
     print("Follow NICE guideline on hypertension in adults.")
+    print("Refer to NICE NG203 guideline for full context.")
 
 if __name__ == "__main__":
     run_guideline()
