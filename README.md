@@ -30,20 +30,24 @@ Does the patient have hypertension? (yes/no): no
 
 Output:
 Monitor in line with eGFR category
-Follow NICE guideline on hypertension in adults.
 ```
 ### Example 2: ACR 3–29 mg/mmol, type 2 diabetes, eligible for SGLT2
 ```text
 Enter ACR (mg/mmol): 4
+Does the patient have diabetes? (yes/no): y'
+Invalid input
 Does the patient have diabetes? (yes/no): yes
 ACR classification: ACR 3–29 mg/mmol
+
+Output:
+Offer an ACE inhibitor or ARB (titrated to the highest licensed dose they can tolerate)
+
+Input:
 Does the patient have type 2 diabetes? (yes/no): yes
 Does the patient meet criteria for SGLT2 inhibitor? (yes/no): yes
 
 Output:
-Consider SGLT2 inhibitor
-Follow NICE guideline on hypertension in adults.
-Refer to NICE NG203 guideline for full context.
+Consider an SGLT2 inhibitor
 ```
 
 ### Example 3: ACR 30–69 mg/mmol, no diabetes, with hypertension
@@ -55,7 +59,6 @@ Does the patient have hypertension? (yes/no): yes
 
 Output:
 Offer ACE inhibitor or ARB (titrated to the highest licensed dose that they can tolerate)
-Follow NICE guideline on hypertension in adults.
 ```
 
 ### Example 4: ACR ≥ 70 mg/mmol, no diabetes, no hypertension
@@ -66,7 +69,6 @@ ACR classification: ACR ≥ 70 mg/mmol
 
 Output:
 Offer ACE inhibitor or ARB (titrated to the highest licensed dose that they can tolerate) and refer to specialist
-Follow NICE guideline on hypertension in adults.
 ```
 ### Example 5: ACR 30–69 mg/mmol, no diabetes, no hypertension, with invalid ACR input
 ```text
@@ -79,7 +81,6 @@ Does the patient have hypertension? (yes/no): no
 
 Output:
 Monitor eGFR and consider nephrologist if eGFR declines or ACR increases
-Follow NICE guideline on hypertension in adults.
 ```
 ## Extracted Rules
 
