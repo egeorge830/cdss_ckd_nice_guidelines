@@ -67,7 +67,6 @@ ACR classification: ACR ≥ 70 mg/mmol
 Output:
 Offer ACE inhibitor or ARB (titrated to the highest licensed dose that they can tolerate) and refer to specialist
 Follow NICE guideline on hypertension in adults.
-
 ```
 ### Example 5: ACR 30–69 mg/mmol, no diabetes, no hypertension, with invalid ACR input
 ```text
