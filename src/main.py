@@ -1,5 +1,4 @@
 # Clinical Guideline Implementation: Proteinuria Management in CKD
-# With basic input validation
 
 def yes_or_no(prompt):
     answer = input(prompt + " (yes/no): ")
@@ -37,15 +36,15 @@ def needs_sglt2(acr, has_type2, is_eligible):
 
 def proteinuria_recommendation(acr, has_hypertension):
     if acr >= 70:
-        return "Offer ACE inhibitor or ARB and refer to specialist"
+        return "Offer ACE inhibitor or ARB (titrated to the highest licensed dose that they can tolerate) and refer to specialist"
     elif acr >= 30 and acr < 70:
         if has_hypertension:
-            return "Offer ACE inhibitor or ARB"
+            return "Offer ACE inhibitor or ARB (titrated to the highest licensed dose that they can tolerate)"
         else:
             return "Monitor eGFR and consider nephrologist if eGFR declines or ACR increases"
     elif acr >= 3 and acr < 30:
         if has_hypertension:
-            return "Offer ACE inhibitor or ARB"
+            return "Offer ACE inhibitor or ARB (titrated to the highest licensed dose that they can tolerate)"
         else:
             return "Monitor eGFR and consider discussing with nephrologist if eGFR declines or ACR increases"
     else:
