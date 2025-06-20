@@ -35,9 +35,7 @@ def needs_sglt2(acr, has_type2, is_eligible):
     return None
 
 def proteinuria_recommendation(acr, has_hypertension):
-    if acr >= 70:
-        return "Offer ACE inhibitor or ARB (titrated to the highest licensed dose that they can tolerate) and refer to specialist"
-    elif acr >= 30 and acr < 70:
+    if acr >= 30 and acr < 70:
         if has_hypertension:
             return "Offer ACE inhibitor or ARB (titrated to the highest licensed dose that they can tolerate)"
         else:
@@ -65,8 +63,11 @@ def run_guideline():
         if sglt2_result:
             print(sglt2_result)
     else:
-        has_hypertension = yes_or_no("Does the patient have hypertension?")
-        print(proteinuria_recommendation(acr, has_hypertension))
+        if acr >= 70:
+            print("Offer ACE inhibitor or ARB (titrated to the highest licensed dose that they can tolerate) and refer to specialist")
+        else:
+            has_hypertension = yes_or_no("Does the patient have hypertension?")
+            print(proteinuria_recommendation(acr, has_hypertension))
 
     print("Follow NICE guideline on hypertension in adults.")
     print("Refer to NICE NG203 guideline for full context.")
