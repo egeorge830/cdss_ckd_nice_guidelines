@@ -1,3 +1,5 @@
+Academic project developed during the M.S. in Health Informatics program at Indiana University.
+
 # SU25_Week_4: Proteinuria Management in CKD
 
 ## Purpose
